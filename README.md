@@ -27,3 +27,6 @@ A pixel-art iOS haze widget for Singapore built using Scriptable.
 6. Select the HazeSG script.
 7. Set the widget parameter to:
    `west`, `east`, `north`, `south`, or `central`
+
+## Preview 
+![widget preview](assets/preview/preview.png)
