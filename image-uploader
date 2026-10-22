@@ -1,0 +1,27 @@
+let image = await Photos.fromLibrary()
+
+let alert = new Alert()
+alert.title = "File name"
+alert.message = "Type a name like good.png"
+alert.addTextField("good.png")
+alert.addAction("Save")
+alert.addCancelAction("Cancel")
+
+let result = await alert.present()
+
+if (result === -1) {
+  Script.complete()
+}
+
+let name = alert.textFieldValue(0)
+
+let fm = FileManager.local()
+
+let path = fm.joinPath(
+  fm.documentsDirectory(),
+  name
+)
+
+fm.writeImage(path, image)
+
+console.log(`Saved as ${name}`)
